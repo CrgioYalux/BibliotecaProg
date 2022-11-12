@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --brand-color-hue: 192;
+    --accent-color-hue: 342;
+
+    --brand-color-lightest: hsl(var(--brand-color-hue), 50%, 80%);
+    --brand-color-lighter: hsl(var(--brand-color-hue), 50%, 70%);
+    --brand-color-light: hsl(var(--brand-color-hue), 50%, 60%);
+    --brand-color: hsl(var(--brand-color-hue), 50%, 50%);
+    --brand-color-dark: hsl(var(--brand-color-hue), 50%, 40%);
+    --brand-color-darker: hsl(var(--brand-color-hue), 50%, 30%);
+    --brand-color-darkest: hsl(var(--brand-color-hue), 50%, 20%);
+
+    --accent-color-lightest: hsl(var(--brand-color-hue), 50%, 80%);
+    --accent-color-lighter: hsl(var(--brand-color-hue), 50%, 70%);
+    --accent-color-light: hsl(var(--brand-color-hue), 50%, 60%);
+    --accent-color: hsl(var(--brand-color-hue), 50%, 50%);
+    --accent-color-dark: hsl(var(--brand-color-hue), 50%, 40%);
+    --accent-color-darker: hsl(var(--brand-color-hue), 50%, 30%);
+    --accent-color-darkest: hsl(var(--brand-color-hue), 50%, 20%);
+}
+body {
+    font-family: "Arial", sans-serif;
+    color: var(--secondary-color-opacity-full);
+    background-color: var(--primary-color-opacity-full);
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type='checkbox'] { display: none; }
