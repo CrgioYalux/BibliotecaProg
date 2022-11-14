@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Libreria</title>
+        <title>Biblioteca</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./global.css" rel="stylesheet">
         <link href="./style.css" rel="stylesheet">
     </head>
     <body>
+        <header class="header__box">
+            <h1 class="header__title">Biblioteca</h1>
+            <nav class="header__nav">
+                <label for="bookSection">
+                    <input type="radio" name="section" id="bookSection" checked />
+                    <span>Libros</span>
+                </label>
+                <label for="lendSection">
+                    <input type="radio" name="section" id="lendSection" />
+                    <span>Prestamos</span>
+                </label>
+                <label for="studentSection">
+                    <input type="radio" name="section" id="studentSection" />
+                    <span>Estudiantes</span>
+                </label>
+            </nav>
+        </header>
+        <main class="main__box">
+            <form class="main__form">
+                <div id="form__box"></div>
+                <div class="form_buttons__box">
+                    <button class="form_add__button">
+                        Agregar
+                    </button>
+                    <button class="form_edit__button" disabled>
+                        Editar 
+                    </button>
+                    <button class="form_delete__button" disabled>
+                        Eliminar
+                    </button>
+                </div>
+            </form>
+            <ul id="data__list">
+                
+            </ul>
+        </main>
+        <footer class="footer__box">
+            <h3>
+                Team
+            </h3>
+            <ul>
+                <li>Sergio Yalux (55757)</li>
+                <li>Lucas Vazquez (55893)</li>
+                <li>Mateo González (55753)</li>
+            </ul>
+        </footer>
     </body>
 </html>

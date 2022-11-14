@@ -39,4 +39,5 @@ body {
     align-items: center;
 }
 
-input[type='checkbox'] { display: none; }
+input[type='checkbox'],
+input[type='radio'] { display: none; }

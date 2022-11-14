@@ -1,0 +1,85 @@
+/* Structure */
+
+.header__box,
+.main__box,
+.footer__box {
+    width: 100%;
+
+    font-size: 1rem;
+}
+
+.header__box {
+    margin-bottom: auto;
+    margin-top: 0;
+}
+
+.footer__box {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+/* Header */
+
+.header__box {
+    background-color: var(--brand-color);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__title {
+    margin: 10px 0;
+}
+
+.header__nav {
+    flex: 1 1 auto;
+    width: max-content;
+
+    align-self: flex-start;
+
+    margin-left: 5%;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    overflow: hidden;
+
+    border: 2px solid black;
+    border-bottom: 0;
+}
+
+.header__nav > label {
+    box-sizing: border-box;
+    border-right: 2px solid black;
+
+    cursor: pointer;
+}
+
+.header__nav > label:last-child {
+    border: 0;
+}
+
+.header__nav > label > span {
+    display: block;
+
+    font-size: 1.2em;
+    font-weight: bold;
+
+    padding: .25em .75em;
+
+    background-color: var(--brand-color-dark);
+}
+
+.header__nav > label > input:checked + span {
+    background-color: var(--brand-color-darker);
+}
+
+
+
