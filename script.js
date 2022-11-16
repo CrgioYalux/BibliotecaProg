@@ -1,81 +1,57 @@
 import { setForm } from './setForm.js';
 import { setDataList } from './setDataList.js';
+import apiStudents from './api/students/actions.js';
+import apiLendings from './api/lendings/actions.js';
+import apiBooks from './api/books/actions.js';
 
 const formBox = document.getElementById('formBox');
 const dataListBox = document.getElementById('dataListBox');
 const sectionsBox = document.getElementById('sectionsBox');
 
-let currentSection = 'lendingSection';
 
-const booksMockData = [
-    {
-        ID: 1,
-        titulo: 'In Search of Lost Time',
-        autor: 'Marcel Proust'
-    },
-    {
-        ID: 2,
-        titulo: 'Ulysses',
-        autor: 'James Joyce'
-    },
-    {
-        ID: 3,
-        titulo: 'Don Quijote',
-        autor: 'Miguel de Cervantes'
-    },
-    {
-        ID: 4,
-        titulo: '100 Años de Soledad',
-        autor: 'Gabriel Garcia Marquez'
+async function getData(section = 'bookSection') {
+    let data = [];
+
+    if (section === 'bookSection') {
+        data = await apiBooks.getBooks();
+    } else if (section === 'lendingSection') {
+        data = await apiLendings.getLendings();
     }
-];
-
-const studentsMockData = [
-    {
-        ID: 1,
-        dni: '42719383',
-        nombre: 'Crgio',
-        direccion: 'No se'
-
+    else {
+        data = await apiStudents.getStudents();
     }
-];
 
-const lendingsMockData = [
-    {
-        ID: 1,
-        fechaEntrega: new Date(),
-        fechaDevolucion: new Date(),
-        libro: {
-            titulo: 'Don Quijote',
-            autor: 'Miguel de Cervantes',
-        },
-        alumno: {
-            nombre: 'Crgio',
-            dni: '42719383'
-        },
-        libroID: 1,
-        alumnoID: 1
-    }
-];
+    return data;
+}
 
-sectionsBox.addEventListener('change', (e) => {
-    currentSection = e.target.id;
+async function handleChangeSections(event) {
+    let currentSection = event.target.id;
+
+    let data = await getData(currentSection);
 
     setForm(formBox, currentSection);
     setDataList(
         dataListBox,
-        lendingsMockData,
-        currentSection
-    );
-});
-
-function init() {
-    setForm(formBox, currentSection);
-    setDataList(
-        dataListBox,
-        lendingsMockData,
+        data,
         currentSection
     );
 }
 
-init();
+sectionsBox.addEventListener('change', handleChangeSections);
+
+(async () => {
+    const bookSection = document.getElementById('bookSection');
+    const currentSection = bookSection.id;
+
+    bookSection.checked = true;
+
+    let data = await getData(currentSection);
+
+    setForm(formBox, currentSection);
+
+    setDataList(
+        dataListBox,
+        data,
+        currentSection
+    );
+})()

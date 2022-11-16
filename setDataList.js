@@ -1,4 +1,4 @@
-function setBooksDataList(dataListBox, data) {
+function setBooksDataList(dataListBox, data = []) {
     dataListBox.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
@@ -35,7 +35,7 @@ function setBooksDataList(dataListBox, data) {
     dataListBox.append(fragment);
 }
 
-function setStudentsDataList(dataListBox, data) {
+function setStudentsDataList(dataListBox, data = []) {
     dataListBox.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
@@ -79,7 +79,7 @@ function setStudentsDataList(dataListBox, data) {
     dataListBox.append(fragment);
 }
 
-function setLendingsDataList(dataListBox, data) {
+function setLendingsDataList(dataListBox, data = []) {
     dataListBox.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
@@ -110,8 +110,8 @@ function setLendingsDataList(dataListBox, data) {
         input.setAttribute('type', 'radio');
         input.setAttribute('name', 'lendingsValue');
 
-        spanOne.textContent = `Fecha de Entrega: ${element.fechaEntrega.toDateString()}`;
-        spanTwo.textContent = `Fecha de Devolución: ${element.fechaDevolucion.toDateString()}`;
+        spanOne.textContent = `Fecha de Entrega: ${element.fechaEntrega}`;
+        spanTwo.textContent = `Fecha de Devolución: ${element.fechaDevolucion}`;
         
         i.textContent = element.libro.titulo;
 
@@ -140,7 +140,7 @@ function setLendingsDataList(dataListBox, data) {
     dataListBox.append(fragment);
 }
 
-function setDataList(dataListBox, data, section = 'bookSection') {
+function setDataList(dataListBox, data = [], section = 'bookSection') {
     if (section === 'bookSection') setBooksDataList(dataListBox, data);
     else if (section === 'lendingSection') setLendingsDataList(dataListBox, data);
     else setStudentsDataList(dataListBox, data);
