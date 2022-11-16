@@ -1,100 +1,81 @@
+import { setForm } from './setForm.js';
+import { setDataList } from './setDataList.js';
+
 const formBox = document.getElementById('formBox');
-const dataList = document.getElementById('dataList');
+const dataListBox = document.getElementById('dataListBox');
+const sectionsBox = document.getElementById('sectionsBox');
 
-function populateSelectElement(selectElement, options) {
-    selectElement.innerHTML = '';
+let currentSection = 'lendingSection';
 
-    for (let i = 0; i < options.length; i++) {
-        const option = document.createElement('option');
-        option.value = options[i].id;
-        option.text = options[i].titulo;
-
-        selectElement.add(option);
+const booksMockData = [
+    {
+        ID: 1,
+        titulo: 'In Search of Lost Time',
+        autor: 'Marcel Proust'
+    },
+    {
+        ID: 2,
+        titulo: 'Ulysses',
+        autor: 'James Joyce'
+    },
+    {
+        ID: 3,
+        titulo: 'Don Quijote',
+        autor: 'Miguel de Cervantes'
+    },
+    {
+        ID: 4,
+        titulo: '100 Años de Soledad',
+        autor: 'Gabriel Garcia Marquez'
     }
+];
+
+const studentsMockData = [
+    {
+        ID: 1,
+        dni: '42719383',
+        nombre: 'Crgio',
+        direccion: 'No se'
+
+    }
+];
+
+const lendingsMockData = [
+    {
+        ID: 1,
+        fechaEntrega: new Date(),
+        fechaDevolucion: new Date(),
+        libro: {
+            titulo: 'Don Quijote',
+            autor: 'Miguel de Cervantes',
+        },
+        alumno: {
+            nombre: 'Crgio',
+            dni: '42719383'
+        },
+        libroID: 1,
+        alumnoID: 1
+    }
+];
+
+sectionsBox.addEventListener('change', (e) => {
+    currentSection = e.target.id;
+
+    setForm(formBox, currentSection);
+    setDataList(
+        dataListBox,
+        lendingsMockData,
+        currentSection
+    );
+});
+
+function init() {
+    setForm(formBox, currentSection);
+    setDataList(
+        dataListBox,
+        lendingsMockData,
+        currentSection
+    );
 }
 
-function createInputElement(id, labelText, type = 'text', classList = []) {
-    const label = document.createElement('label');
-    const input = document.createElement('input');
-    const span = document.createElement('span');
-
-    input.setAttribute('id', id);
-    input.setAttribute('type', type);
-
-    label.setAttribute('for', id);
-        
-    span.textContent = labelText;
-
-    classList.forEach((e) => label.classList.add(e));
-    
-    label.append(span);
-    label.append(input);
-
-    return label;
-}
-
-function createSelectElement(id, labelText, options = [], classList = []) {
-    const label = document.createElement('label');
-    const select = document.createElement('select');
-    const span = document.createElement('span');
-
-    label.setAttribute('for', id);
-
-    select.setAttribute('id', id);
-
-    span.textContent = labelText;
-
-    populateSelectElement(select, options);
-    
-    label.append(span);
-    label.append(select);
-
-    return label;
-}
-
-function setBooksForm() {
-    formBox.innerHTML = '';
-
-    const fragment = document.createDocumentFragment();
-
-    const titleInput = createInputElement('titleInput', 'Titulo');
-    const authorInput = createInputElement('authorInput', 'Autor')
-
-    fragment.append(titleInput);
-    fragment.append(authorInput);
-
-    formBox.append(fragment);
-}
-
-function setStudentsForm() {
-    formBox.innerHTML = '';
-
-    const fragment = document.createDocumentFragment();
-
-    const dniInput = createInputElement('dniInput', 'DNI');
-    const nameInput = createInputElement('nameInput', 'Nombre y Apellido');
-    const addressInput = createInputElement('addressInput', 'Dirección');
-
-    fragment.append(dniInput);
-    fragment.append(nameInput);
-    fragment.append(addressInput);
-
-    formBox.append(fragment);
-}
-
-function setLendingsForm() {
-    formBox.innerHTML = '';
-
-    const fragment = document.createDocumentFragment();
-
-    const deliveryDateInput = createInputElement('deliveryDateInput', 'Fecha de Entrega', 'date');
-    const returnDateInput = createInputElement('returnDateInput', 'Fecha de Devolucón', 'date');
-    const bookSelect = createSelectElement('bookSelect', 'Libro a prestar', [{id: 1, titulo: 'libro 1'},{id: 2, titulo: 'libro 2'}]);
-
-    fragment.append(deliveryDateInput);
-    fragment.append(returnDateInput);
-    fragment.append(bookSelect);
-    
-    formBox.append(fragment);
-}
-
+init();

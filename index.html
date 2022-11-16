@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./global.css" rel="stylesheet">
         <link href="./style.css" rel="stylesheet">
-        <script src="./script.js" defer></script>
+        <script type="module" src="./script.js" defer></script>
     </head>
     <body>
         <header class="header__box">
             <h1 class="header__title">Biblioteca</h1>
-            <nav class="header__nav">
+            <nav class="header__nav" id="sectionsBox">
                 <label for="bookSection">
                     <input type="radio" name="section" id="bookSection" checked />
                     <span>Libros</span>
                 </label>
-                <label for="lendSection">
-                    <input type="radio" name="section" id="lendSection" />
+                <label for="lendingSection">
+                    <input type="radio" name="section" id="lendingSection" />
                     <span>Prestamos</span>
                 </label>
                 <label for="studentSection">
@@ -41,7 +41,7 @@
                     </button>
                 </div>
             </form>
-            <ul id="dataList">
+            <ul id="dataListBox">
                 
             </ul>
         </main>

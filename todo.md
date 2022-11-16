@@ -14,7 +14,7 @@
 
 - Prestamo
     ID
-   fechaEntrega
+    fechaEntrega
     fechaDevolucion
     libroID
     alumnoID
