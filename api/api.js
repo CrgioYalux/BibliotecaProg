@@ -10,6 +10,7 @@ async function execGetReq(endpoint) {
 
 async function execPostReq(endpoint, payload) {
     try {
+        if (payload === undefined) throw new Error('Payload is undefined');
         const req = await axios.post(endpoint, payload);
         return req.data;
     } catch (error) {
@@ -28,6 +29,7 @@ async function execDeleteReq(endpoint) {
 
 async function execPutReq(endpoint, payload) {
     try {
+        if (payload === undefined) throw new Error('Payload is undefined');
         const req = await axios.put(endpoint, payload);
         return req.data;
     } catch (error) {
