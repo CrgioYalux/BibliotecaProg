@@ -30,25 +30,27 @@ function setStudentsForm(formBox) {
     formBox.append(fragment);
 }
 
-function setLendingsForm(formBox) {
+function setLendingsForm(formBox, books = []) {
     formBox.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
 
     const deliveryDateInput = createInputElement('deliveryDateInput', 'Fecha de Entrega', 'date');
     const returnDateInput = createInputElement('returnDateInput', 'Fecha de Devolucón', 'date');
-    const bookSelect = createSelectElement('bookSelect', 'Libro a prestar', [{id: 1, titulo: 'libro 1'},{id: 2, titulo: 'libro 2'}]);
+    const bookSelect = createSelectElement('bookSelect', 'Libro a prestar', books);
+    const studentDniInput = createInputElement('studentDni', 'DNI', 'text');
 
     fragment.append(deliveryDateInput);
     fragment.append(returnDateInput);
     fragment.append(bookSelect);
+    fragment.append(studentDniInput);
     
     formBox.append(fragment);
 }
 
-function setForm(formBox, section = 'bookSection') {
+function setForm(formBox, section = 'bookSection', books = []) {
     if (section === 'bookSection') setBooksForm(formBox);
-    else if (section === 'lendingSection') setLendingsForm(formBox);
+    else if (section === 'lendingSection') setLendingsForm(formBox, books);
     else setStudentsForm(formBox);
 }
 

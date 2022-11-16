@@ -3,8 +3,8 @@ function populateSelectElement(selectElement, options) {
 
     for (let i = 0; i < options.length; i++) {
         const option = document.createElement('option');
-        option.value = options[i].id;
-        option.text = options[i].titulo;
+        option.value = options[i].value;
+        option.text = options[i].text;
 
         selectElement.add(option);
     }
