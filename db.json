@@ -1,0 +1,42 @@
+{
+    "libros": [
+        {
+            "ID": 1,
+            "titulo": "In Search of Lost Time",
+            "autor": "Marcel Proust"
+        },
+        {
+            "ID": 2,
+            "titulo": "Ulysses",
+            "autor": "James Joyce"
+        },
+        {
+            "ID": 3,
+            "titulo": "Don Quijote",
+            "autor": "Miguel de Cervantes"
+        },
+        {
+            "ID": 4,
+            "titulo": "100 Años de Soledad",
+            "autor": "Gabriel Garcia Marquez"
+        }
+    ],
+    "alumnos": [
+        {
+            "ID": 1,
+            "dni": "42719383",
+            "nombre": "Crgio",
+            "direccion": "No se"
+        }
+    ],
+    "prestamos": [
+        {
+            "ID": 1,
+            "fechaEntrega": "11/16/2022",
+            "fechaDevolucion": "11/16/2022",
+            "libroID": 1,
+            "alumnoID": 1
+        }
+    ]
+}
+
