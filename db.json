@@ -47,18 +47,20 @@
   ],
   "prestamos": [
     {
-      "fechaEntrega": "2022-11-09",
-      "fechaDevolucion": "2022-11-01",
-      "libroId": 2,
+      "libroId": 3,
+      "alumnoDni": "42719383",
+      "fechaEntrega": "11/17/2022",
+      "fechaDevolucion": "11/17/2022",
       "alumnoId": 1,
-      "id": 2
+      "id": 1
     },
     {
-      "fechaEntrega": "2022-11-08",
-      "fechaDevolucion": "2022-11-22",
-      "libroId": 6,
-      "alumnoId": 2,
-      "id": 3
+      "libroId": 2,
+      "alumnoDni": "42719383",
+      "fechaEntrega": "11/17/2022",
+      "fechaDevolucion": "11/17/2022",
+      "alumnoId": 1,
+      "id": 2
     }
   ]
 }

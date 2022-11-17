@@ -36,13 +36,14 @@ function setLendingsForm(formBox, books = []) {
 
     const fragment = document.createDocumentFragment();
 
-    const deliveryDateInput = createInputElement('deliveryDateInput', 'Fecha de Entrega', 'date');
-    const returnDateInput = createInputElement('returnDateInput', 'Fecha de Devolucón', 'date');
+    // const deliveryDateInput = createInputElement('deliveryDateInput', 'Fecha de Entrega', 'date');
     const bookSelect = createSelectElement('bookSelect', 'Libro a prestar', books);
     const studentDniInput = createInputElement('studentDni', 'DNI', 'text');
 
-    fragment.append(deliveryDateInput);
-    fragment.append(returnDateInput);
+    // deliveryDateInput.lastChild.disabled = true;
+    // deliveryDateInput.lastChild.valueAsDate = new Date();
+
+    // fragment.append(deliveryDateInput);
     fragment.append(bookSelect);
     fragment.append(studentDniInput);
     

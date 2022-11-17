@@ -13,10 +13,8 @@ function getFormData(formElement, section) {
         }
     } else if (section === SECTIONS.LENDINGS) {
         data = {
-            fechaEntrega: inputs[0].lastChild.value,
-            fechaDevolucion: inputs[1].lastChild.value,
-            libroId: Number(inputs[2].lastChild.value),
-            alumnoDni: inputs[3].lastChild.value
+            libroId: Number(inputs[0].lastChild.value),
+            alumnoDni: inputs[1].lastChild.value
         }
     }
     else {

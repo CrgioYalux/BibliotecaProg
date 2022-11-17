@@ -11,6 +11,7 @@ const sectionsBox = document.getElementById('sectionsBox');
 const formAddButton = document.getElementById('formAddButton');
 const formEditButton = document.getElementById('formEditButton');
 const formDeleteButton = document.getElementById('formDeleteButton');
+const formReturnButton = document.getElementById('formReturnButton');
 
 let currentSection;
 let selectedElementId = null;
@@ -22,11 +23,16 @@ function editingMode(isEditing, section) {
         formEditButton.disabled = false;
         formDeleteButton.disabled = false;
 
+        if (section === SECTIONS.LENDINGS) {
+            formReturnButton.disabled = false;
+        }
+
         fillForm(section, selectedElement);
     } else {
         formAddButton.disabled = false;
         formEditButton.disabled = true;
         formDeleteButton.disabled = true;
+        formReturnButton.disabled = true;
 
         mainForm.reset();
     }
@@ -45,7 +51,7 @@ sectionsBox.addEventListener('change', (event) => {
 });
 
 dataListBox.addEventListener('change', (event) => {
-    selectedElementId = event.target.id;
+    selectedElementId = Number(event.target.id);
     selectedElement = JSON.parse(event.target.dataset.element);
     
     editingMode(true, currentSection);

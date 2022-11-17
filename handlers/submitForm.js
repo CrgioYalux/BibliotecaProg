@@ -14,6 +14,10 @@ function submitForm(event, currentSection, selectedId) {
     else if (event.submitter.id === 'formEditButton') {
         editDataBySection(currentSection, selectedId, data);
     }
+    else if (event.submitter.id === 'formReturnButton') {
+        // Return botton should be disabled when selected an already returned book
+        editDataBySection(currentSection, selectedId, data);
+    }
     else {
         deleteDataBySection(currentSection, selectedId);
     }

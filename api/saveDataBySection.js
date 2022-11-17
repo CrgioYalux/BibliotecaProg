@@ -19,6 +19,7 @@ async function saveDataBySection(section, data) {
 
         const save = {
             ...restOfData,
+            fechaEntrega: new Date().toLocaleDateString(),
             alumnoId: existantStudent[0].id
         };
 

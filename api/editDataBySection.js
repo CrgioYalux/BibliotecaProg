@@ -13,16 +13,18 @@ async function editDataBySection(section, id, data) {
             }
         );  
     } else if (section === SECTIONS.LENDINGS) {
+        const lendings = await apiLendings.getLendings();
         const students = await apiStudents.getStudents();
 
         const existantStudent = students.filter((student) => student.dni === data.alumnoDni);
+        const currentLending = lendings.filter((lending) => lending.id === id); 
 
-        if (existantStudent.length === 0) return false;
+        if (existantStudent.length === 0 || currentLending.length === 0) return false;
 
         editDataRes = await apiLendings.editLending(id, {
-            fechaEntrega: data.fechaEntrega,
-            fechaDevolucion: data.fechaDevolucion,
-            libroId: data.libroId,
+            ...data,
+            fechaEntrega: currentLending[0].fechaEntrega,
+            fechaDevolucion: new Date().toLocaleDateString(),
             alumnoId: existantStudent[0].id
         });
     }

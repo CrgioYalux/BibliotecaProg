@@ -119,7 +119,7 @@ function setLendingsDataList(dataListBox, data = []) {
         input.setAttribute('name', 'lendingsValue');
 
         spanOne.textContent = `Fecha de Entrega: ${element.fechaEntrega}`;
-        spanTwo.textContent = `Fecha de Devolución: ${element.fechaDevolucion}`;
+        spanTwo.textContent = `Fecha de Devolución: ${element.fechaDevolucion ?? 'Aún no devuelto'}`;
         
         i.textContent = element.libro.titulo;
 
