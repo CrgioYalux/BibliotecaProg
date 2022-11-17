@@ -29,6 +29,11 @@
       "titulo": "Las aventuras de Alicia en el País de las Maravillas",
       "autor": "Lewis Carroll",
       "id": 6
+    },
+    {
+      "titulo": "otro",
+      "autor": "mas",
+      "id": 7
     }
   ],
   "alumnos": [

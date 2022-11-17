@@ -23,9 +23,9 @@ function setBooksDataList(dataListBox, data = []) {
         input.setAttribute('type', 'radio');
         input.setAttribute('name', 'booksValue');
 
-        i.textContent = element.titulo;
+        i.textContent = `'${element.titulo}'`;
 
-        spanBox.textContent = `'${element.autor}' - `;
+        spanBox.textContent = `${element.autor}`;
         spanBox.append(i);
 
         label.append(spanBox);
@@ -64,12 +64,12 @@ function setStudentsDataList(dataListBox, data = []) {
         input.setAttribute('type', 'radio');
         input.setAttribute('name', 'studentsValue');
 
-        small.textContent = `(${element.dni})`;
+        small.textContent = ` (${element.dni})`;
 
-        spanOne.textContent = element.nombre;
+        spanOne.textContent = `Alumno: ${element.nombre}`;
         spanOne.append(small);
 
-        spanTwo.textContent = element.direccion;
+        spanTwo.textContent = `Direccion: ${element.direccion}`;
 
         spanBox.append(spanOne);
         spanBox.append(spanTwo);
@@ -123,12 +123,12 @@ function setLendingsDataList(dataListBox, data = []) {
         
         i.textContent = element.libro.titulo;
 
-        spanThree.textContent = `${element.libro.autor} - `;
+        spanThree.textContent = `Libro: ${element.libro.autor} - `;
         spanThree.append(i);
 
-        small.textContent = `(${element.alumno.dni})`;
+        small.textContent = ` (${element.alumno.dni})`;
 
-        spanFour.textContent = element.alumno.nombre;
+        spanFour.textContent = `Alumno: ${element.alumno.nombre}`;
         spanFour.append(small);
 
         spanBox.append(spanOne);

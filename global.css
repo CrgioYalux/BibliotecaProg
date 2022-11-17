@@ -19,13 +19,13 @@
     --brand-color-darker: hsl(var(--brand-color-hue), 50%, 30%);
     --brand-color-darkest: hsl(var(--brand-color-hue), 50%, 20%);
 
-    --accent-color-lightest: hsl(var(--brand-color-hue), 50%, 80%);
-    --accent-color-lighter: hsl(var(--brand-color-hue), 50%, 70%);
-    --accent-color-light: hsl(var(--brand-color-hue), 50%, 60%);
-    --accent-color: hsl(var(--brand-color-hue), 50%, 50%);
-    --accent-color-dark: hsl(var(--brand-color-hue), 50%, 40%);
-    --accent-color-darker: hsl(var(--brand-color-hue), 50%, 30%);
-    --accent-color-darkest: hsl(var(--brand-color-hue), 50%, 20%);
+    --accent-color-lightest: hsl(var(--accent-color-hue), 50%, 80%);
+    --accent-color-lighter: hsl(var(--accent-color-hue), 50%, 70%);
+    --accent-color-light: hsl(var(--accent-color-hue), 50%, 60%);
+    --accent-color: hsl(var(--accent-color-hue), 50%, 50%);
+    --accent-color-dark: hsl(var(--accent-color-hue), 50%, 40%);
+    --accent-color-darker: hsl(var(--accent-color-hue), 50%, 30%);
+    --accent-color-darkest: hsl(var(--accent-color-hue), 50%, 20%);
 }
 body {
     font-family: "Arial", sans-serif;
@@ -39,7 +39,5 @@ body {
     align-items: center;
 }
 
-/*
 input[type='checkbox'],
 input[type='radio'] { display: none; }
-*/
