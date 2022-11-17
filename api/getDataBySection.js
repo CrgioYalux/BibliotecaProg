@@ -2,7 +2,7 @@ import apiBooks from './books/actions.js';
 import apiLendings from './lendings/actions.js';
 import apiStudents from './students/actions.js';
 
-async function getDataBySection(section = 'bookSection') {
+async function getDataBySection(section) {
     let data = [];
 
     if (section === 'bookSection') {

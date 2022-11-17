@@ -13,13 +13,13 @@ async function getBooks() {
     return (getBooksRes.failed === true) ? [] : getBooksRes;
 }
 
-async function addBook(book) {
-    const addBookRes = await execPostReq(ENDPOINT(PATH.BOOKS), book);
-    return (addBookRes.failed === true) ? {} : addBookRes;
+async function saveBook(book) {
+    const saveBookRes = await execPostReq(ENDPOINT(PATH.BOOKS), book);
+    return (saveBookRes.failed === true) ? {} : saveBookRes;
 }
 
-async function editBook(book) {
-    const editBookRes = await execPutReq(ENDPOINT(PATH.BOOKS), book);
+async function editBook(bookID, book) {
+    const editBookRes = await execPutReq(ENDPOINT(`${PATH.BOOKS}/${bookID}`), book);
     return (editBookRes.failed === true) ? {} : editBookRes;
 }
 
@@ -30,7 +30,7 @@ async function deleteBook(bookID) {
 
 const bookActions = {
     getBooks,
-    addBook,
+    saveBook,
     editBook,
     deleteBook
 };

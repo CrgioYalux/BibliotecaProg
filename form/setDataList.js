@@ -11,11 +11,11 @@ function setBooksDataList(dataListBox, data = []) {
         const strong = document.createElement('strong');
         const i = document.createElement('i');
 
-        li.dataset.Id = element.ID;
+        li.dataset.id = element.id;
 
-        label.setAttribute('for', element.ID);
+        label.setAttribute('for', element.id);
 
-        input.setAttribute('id', element.ID);
+        input.setAttribute('id', element.id);
         input.setAttribute('type', 'radio');
         input.setAttribute('name', 'booksValue');
 
@@ -50,11 +50,11 @@ function setStudentsDataList(dataListBox, data = []) {
         const strong = document.createElement('strong');
         const small = document.createElement('small');
 
-        li.dataset.Id = element.ID;
+        li.dataset.id = element.id;
 
-        label.setAttribute('for', element.ID);
+        label.setAttribute('for', element.id);
 
-        input.setAttribute('id', element.ID);
+        input.setAttribute('id', element.id);
         input.setAttribute('type', 'radio');
         input.setAttribute('name', 'studentsValue');
 
@@ -100,13 +100,13 @@ function setLendingsDataList(dataListBox, data = []) {
         const strong = document.createElement('strong');
         const small = document.createElement('small');
 
-        li.dataset.Id = element.ID;
-        li.dataset.libroId  = element.libroID;
-        li.dataset.alumnoId = element.alumnoID;
+        li.dataset.id = element.id;
+        li.dataset.libroId  = element.libroId;
+        li.dataset.alumnoId = element.alumnoId;
         
-        label.setAttribute('for', element.ID);
+        label.setAttribute('for', element.id);
 
-        input.setAttribute('id', element.ID);
+        input.setAttribute('id', element.id);
         input.setAttribute('type', 'radio');
         input.setAttribute('name', 'lendingsValue');
 

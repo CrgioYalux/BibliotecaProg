@@ -21,7 +21,7 @@ async function changeSection(setSection, dataListBox, formBox) {
 
     const books = await getDataBySection('bookSection');
     const formattedBooks = books.map((book) => ({
-        value: book.ID,
+        value: book.id,
         text: book.titulo
     }));
     setForm(formBox, setSection, formattedBooks);

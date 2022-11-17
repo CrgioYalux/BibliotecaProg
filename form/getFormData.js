@@ -13,8 +13,8 @@ function getFormData(formElement, section) {
         data = {
             fechaEntrega: inputs[0].lastChild.value,
             fechaDevolucion: inputs[1].lastChild.value,
-            libro: inputs[2].lastChild.value,
-            dniAlumno: inputs[3].lastChild.value
+            libroId: Number(inputs[2].lastChild.value),
+            alumnoDni: inputs[3].lastChild.value
         }
     }
     else {

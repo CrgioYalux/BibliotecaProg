@@ -1,42 +1,66 @@
 {
-    "libros": [
-        {
-            "ID": 1,
-            "titulo": "In Search of Lost Time",
-            "autor": "Marcel Proust"
-        },
-        {
-            "ID": 2,
-            "titulo": "Ulysses",
-            "autor": "James Joyce"
-        },
-        {
-            "ID": 3,
-            "titulo": "Don Quijote",
-            "autor": "Miguel de Cervantes"
-        },
-        {
-            "ID": 4,
-            "titulo": "100 Años de Soledad",
-            "autor": "Gabriel Garcia Marquez"
-        }
-    ],
-    "alumnos": [
-        {
-            "ID": 1,
-            "dni": "42719383",
-            "nombre": "Crgio",
-            "direccion": "No se"
-        }
-    ],
-    "prestamos": [
-        {
-            "ID": 1,
-            "fechaEntrega": "11/16/2022",
-            "fechaDevolucion": "11/16/2022",
-            "libroID": 1,
-            "alumnoID": 1
-        }
-    ]
+  "libros": [
+    {
+      "id": 1,
+      "titulo": "In Search of Lost Time",
+      "autor": "Marcel Proust"
+    },
+    {
+      "id": 2,
+      "titulo": "Ulysses",
+      "autor": "James Joyce"
+    },
+    {
+      "id": 3,
+      "titulo": "Don Quijote",
+      "autor": "Miguel de Cervantes"
+    },
+    {
+      "id": 4,
+      "titulo": "100 Años de Soledad",
+      "autor": "Gabriel Garcia Marquez"
+    },
+    {
+      "titulo": "La vuelta al mundo en 80 días",
+      "autor": "Julio Verne",
+      "id": 5
+    }
+  ],
+  "alumnos": [
+    {
+      "id": 1,
+      "dni": "42719383",
+      "nombre": "Crgio",
+      "direccion": "No se"
+    },
+    {
+      "dni": "12312312",
+      "nombre": "asdasd",
+      "direccion": "asdasd",
+      "id": 2
+    }
+  ],
+  "prestamos": [
+    {
+      "fechaEntrega": "2022-11-11",
+      "fechaDevolucion": "2022-11-01",
+      "libroId": 1,
+      "alumnoId": 1,
+      "id": 1
+    },
+    {
+      "fechaEntrega": "2022-11-18",
+      "fechaDevolucion": "2022-11-09",
+      "libroId": 2,
+      "alumnoId": 1,
+      "id": 2
+    },
+    {
+      "fechaEntrega": "2023-10-12",
+      "fechaDevolucion": "2022-11-01",
+      "libroId": 3,
+      "alumnoId": 2,
+      "id": 3
+    }
+  ]
 }
-
