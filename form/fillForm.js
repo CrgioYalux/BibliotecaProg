@@ -6,6 +6,8 @@ function fillForm(section, selected) {
         formBox.children[1].lastChild.value = selected.autor;
     } else if (section === SECTIONS.LENDINGS) {
         formBox.children[0].lastChild.value = selected.libroId;
+        formBox.children[0].lastChild.dataset.libroId = selected.libroId;
+
         formBox.children[1].lastChild.value = selected.alumno.dni;
     }
     else {

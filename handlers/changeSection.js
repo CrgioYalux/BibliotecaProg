@@ -2,6 +2,7 @@ import { setForm } from '../form/setForm.js';
 import { setDataList } from '../form/setDataList.js';
 import { getDataBySection } from '../api/getDataBySection.js';
 import { SECTIONS } from '../const.js';
+import apiBooks from '../api/books/actions.js';
 
 async function changeSection(setSection, dataListBox, formBox) {
     const section = document.getElementById(setSection);
@@ -20,8 +21,8 @@ async function changeSection(setSection, dataListBox, formBox) {
         return;
     }
 
-    const books = await getDataBySection(SECTIONS.BOOKS);
-    const formattedBooks = books.map((book) => ({
+    const unlendedBooks = await apiBooks.getUnlendedBooks();
+    const formattedBooks = unlendedBooks.map((book) => ({
         value: book.id,
         text: book.titulo
     }));

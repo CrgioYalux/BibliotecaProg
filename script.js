@@ -58,7 +58,8 @@ dataListBox.addEventListener('change', (event) => {
 });
 
 dataListBox.addEventListener('click', (event) => {
-    if (event.target.id === selectedElementId) {
+    const currentSelectedId = Number(event.target.id);
+    if (currentSelectedId === selectedElementId) {
         event.target.checked = false;
         selectedElementId = null;
         selectedElement = null;

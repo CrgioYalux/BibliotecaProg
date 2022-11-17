@@ -12,8 +12,14 @@ function getFormData(formElement, section) {
             autor: inputs[1].lastChild.value,
         }
     } else if (section === SECTIONS.LENDINGS) {
+        let libroId = inputs[0].lastChild.value;
+
+        if (Boolean(libroId) === false) {
+            libroId = inputs[0].lastChild.dataset.libroId;
+        }
+        
         data = {
-            libroId: Number(inputs[0].lastChild.value),
+            libroId: Number(libroId),
             alumnoDni: inputs[1].lastChild.value
         }
     }

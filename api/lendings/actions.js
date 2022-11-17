@@ -37,6 +37,11 @@ async function getLendings() {
     return lendings;
 }
 
+async function getLending(lendingID) {
+    const getLendingRes = await execPutReq(ENDPOINT(`${PATH.LENDINGS}/${lendingID}`));
+    return (getLendingRes.failed === true) ? {} : getLendingRes;
+}
+
 async function saveLending(lending) {
     const saveLendingRes = await execPostReq(ENDPOINT(PATH.LENDINGS), lending);
     return (saveLendingRes.failed === true) ? {} : saveLendingRes;
@@ -52,11 +57,27 @@ async function deleteLending(lendingID) {
     return (deleteLendingRes.failed === true) ? {} : deleteLendingRes;
 }
 
+async function deleteReturnedLendings() {
+    const lendings = await getLendings();
+    lendings.forEach((lending) => {
+        if (lending.fechaDevolucion !== undefined) deleteLending(lending.id);
+    });
+}
+
+async function deleteStudentReturnedLendings(studentId) {
+    const lendings = await getLendings();
+    lendings.forEach((lending) => {
+        if (lending.fechaDevolucion !== undefined && lending.alumnoId === studentId) deleteLending(lending.id);
+    });
+}
 const lendingActions = {
     getLendings,
+    getLending,
     saveLending,
     editLending,
-    deleteLending
+    deleteLending,
+    deleteReturnedLendings,
+    deleteStudentReturnedLendings
 };
 
 export default lendingActions;

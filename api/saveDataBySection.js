@@ -15,7 +15,10 @@ async function saveDataBySection(section, data) {
 
         const existantStudent = students.filter((student) => student.dni === alumnoDni);
 
-        if (existantStudent.length === 0) return false;
+        if (existantStudent.length === 0) return {
+            failed: true,
+            error: 'No existe un usuario para el DNI ingresado.'
+        };
 
         const save = {
             ...restOfData,

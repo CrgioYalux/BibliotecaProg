@@ -1,3 +1,4 @@
+import apiLendings from '../lendings/actions.js';
 import api from '../api.js';
 
 const { ENDPOINT, PATH } = api.utils;
@@ -11,6 +12,27 @@ const {
 async function getBooks() {
     const getBooksRes = await execGetReq(ENDPOINT(PATH.BOOKS));
     return (getBooksRes.failed === true) ? [] : getBooksRes;
+}
+
+async function getUnlendedBooks() {
+    const books = await getBooks();
+    const lendings = await apiLendings.getLendings();
+
+    const unlendedBooks = [];
+
+    for (let x = 0; x < books.length; x++) {
+        let counter = 0;
+        for (let y = 0; y < lendings.length; y++) {
+            if (books[x].id === lendings[y].libroId && lendings[y].fechaDevolucion === undefined) {
+                counter++;
+            }
+        }
+        if (counter === 0) {
+            unlendedBooks.push(books[x]);
+        }
+    }
+
+    return unlendedBooks;
 }
 
 async function saveBook(book) {
@@ -32,7 +54,8 @@ const bookActions = {
     getBooks,
     saveBook,
     editBook,
-    deleteBook
+    deleteBook,
+    getUnlendedBooks
 };
 
 export default bookActions;

@@ -37,28 +37,14 @@
       "direccion": "Moreno",
       "nombre": "Crgio",
       "id": 1
-    },
-    {
-      "dni": "52214",
-      "nombre": "Karl",
-      "direccion": "11th street",
-      "id": 2
     }
   ],
   "prestamos": [
     {
-      "libroId": 3,
+      "libroId": 1,
       "alumnoDni": "42719383",
-      "fechaEntrega": "11/17/2022",
-      "fechaDevolucion": "11/17/2022",
-      "alumnoId": 1,
-      "id": 1
-    },
-    {
-      "libroId": 2,
-      "alumnoDni": "42719383",
-      "fechaEntrega": "11/17/2022",
-      "fechaDevolucion": "11/17/2022",
+      "fechaEntrega": "17/11/2022",
+      "fechaDevolucion": "17/11/2022",
       "alumnoId": 1,
       "id": 2
     }
