@@ -1,0 +1,23 @@
+{
+  "name": "actual_final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "const.js",
+  "scripts": {
+    "start": "json-server db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrgioYalux/BibliotecaProg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrgioYalux/BibliotecaProg/issues"
+  },
+  "homepage": "https://github.com/CrgioYalux/BibliotecaProg#readme",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}
