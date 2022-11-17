@@ -1,6 +1,7 @@
 import { setForm } from '../form/setForm.js';
 import { setDataList } from '../form/setDataList.js';
 import { getDataBySection } from '../api/getDataBySection.js';
+import { SECTIONS } from '../const.js';
 
 async function changeSection(setSection, dataListBox, formBox) {
     const section = document.getElementById(setSection);
@@ -14,12 +15,12 @@ async function changeSection(setSection, dataListBox, formBox) {
         setSection 
     );
 
-    if (setSection === 'bookSection' || setSection === 'studentSection') {
+    if (setSection === SECTIONS.BOOKS || setSection === SECTIONS.STUDENTS) {
         setForm(formBox, setSection);
         return;
     }
 
-    const books = await getDataBySection('bookSection');
+    const books = await getDataBySection(SECTIONS.BOOKS);
     const formattedBooks = books.map((book) => ({
         value: book.id,
         text: book.titulo

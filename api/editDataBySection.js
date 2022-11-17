@@ -1,17 +1,18 @@
 import apiBooks from './books/actions.js';
 import apiLendings from './lendings/actions.js';
 import apiStudents from './students/actions.js';
+import { SECTIONS } from '../const.js';
 
 async function editDataBySection(section, id, data) {
     let editDataRes;
 
-    if (section === 'bookSection') {
+    if (section === SECTIONS.BOOKS) {
         editDataRes = await apiBooks.editBook(id, {
                 titulo: data.titulo,
                 autor: data.autor
             }
         );  
-    } else if (section === 'lendingSection') {
+    } else if (section === SECTIONS.LENDINGS) {
         const students = await apiStudents.getStudents();
 
         const existantStudent = students.filter((student) => student.dni === data.alumnoDni);

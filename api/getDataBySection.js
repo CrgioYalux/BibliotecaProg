@@ -1,13 +1,14 @@
 import apiBooks from './books/actions.js';
 import apiLendings from './lendings/actions.js';
 import apiStudents from './students/actions.js';
+import { SECTIONS } from '../const.js';
 
 async function getDataBySection(section) {
     let getDataRes = [];
 
-    if (section === 'bookSection') {
+    if (section === SECTIONS.BOOKS) {
         getDataRes = await apiBooks.getBooks();
-    } else if (section === 'lendingSection') {
+    } else if (section === SECTIONS.LENDINGS) {
         getDataRes = await apiLendings.getLendings();
     }
     else {

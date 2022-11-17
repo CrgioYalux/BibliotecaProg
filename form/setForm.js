@@ -1,4 +1,5 @@
 import { createInputElement, createSelectElement } from './formUtils.js';
+import { SECTIONS } from '../const.js';
 
 function setBooksForm(formBox) {
     formBox.innerHTML = '';
@@ -49,8 +50,8 @@ function setLendingsForm(formBox, books = []) {
 }
 
 function setForm(formBox, section = 'bookSection', books = []) {
-    if (section === 'bookSection') setBooksForm(formBox);
-    else if (section === 'lendingSection') setLendingsForm(formBox, books);
+    if (section === SECTIONS.BOOKS) setBooksForm(formBox);
+    else if (section === SECTIONS.LENDINGS) setLendingsForm(formBox, books);
     else setStudentsForm(formBox);
 }
 

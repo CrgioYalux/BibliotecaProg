@@ -47,7 +47,7 @@ async function editLending(lendingID, lending) {
     return (editLendingRes.failed === true) ? {} : editLendingRes;
 }
 
-async function deleteLending(lending) {
+async function deleteLending(lendingID) {
     const deleteLendingRes = await execDeleteReq(ENDPOINT(`${PATH.LENDINGS}/${lendingID}`));
     return (deleteLendingRes.failed === true) ? {} : deleteLendingRes;
 }

@@ -21,7 +21,7 @@
       "autor": "Gabriel Garcia Marquez"
     },
     {
-      "titulo": "La vuelta al mundo en 80 días",
+      "titulo": "La Vuelta al Mundo en 80 días",
       "autor": "Julio Verne",
       "id": 5
     },
@@ -40,25 +40,25 @@
     },
     {
       "dni": "52214",
-      "direccion": "11th Street",
-      "nombre": "Karl Marx",
+      "nombre": "Karl",
+      "direccion": "11th street",
       "id": 2
     }
   ],
   "prestamos": [
     {
-      "fechaEntrega": "2022-11-11",
-      "fechaDevolucion": "2022-11-01",
-      "libroId": 5,
-      "alumnoId": 1,
-      "id": 1
-    },
-    {
       "fechaEntrega": "2022-11-09",
       "fechaDevolucion": "2022-11-01",
-      "libroId": 4,
+      "libroId": 2,
       "alumnoId": 1,
       "id": 2
+    },
+    {
+      "fechaEntrega": "2022-11-08",
+      "fechaDevolucion": "2022-11-22",
+      "libroId": 6,
+      "alumnoId": 2,
+      "id": 3
     }
   ]
 }

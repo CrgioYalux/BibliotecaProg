@@ -1,13 +1,14 @@
 import apiBooks from './books/actions.js';
 import apiLendings from './lendings/actions.js';
 import apiStudents from './students/actions.js';
+import { SECTIONS } from '../const.js';
 
 async function saveDataBySection(section, data) {
     let saveDataRes;
 
-    if (section === 'bookSection') {
+    if (section === SECTIONS.BOOKS) {
         saveDataRes = await apiBooks.saveBook(data);  
-    } else if (section === 'lendingSection') {
+    } else if (section === SECTIONS.LENDINGS) {
         const { alumnoDni, ...restOfData } = data;
 
         const students = await apiStudents.getStudents();

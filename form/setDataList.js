@@ -1,3 +1,5 @@
+import { SECTIONS } from '../const.js';
+
 function setBooksDataList(dataListBox, data = []) {
     dataListBox.innerHTML = '';
 
@@ -147,8 +149,8 @@ function setLendingsDataList(dataListBox, data = []) {
 }
 
 function setDataList(dataListBox, data = [], section = 'bookSection') {
-    if (section === 'bookSection') setBooksDataList(dataListBox, data);
-    else if (section === 'lendingSection') setLendingsDataList(dataListBox, data);
+    if (section === SECTIONS.BOOKS) setBooksDataList(dataListBox, data);
+    else if (section === SECTIONS.LENDINGS) setLendingsDataList(dataListBox, data);
     else setStudentsDataList(dataListBox, data);
 }
 
