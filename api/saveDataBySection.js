@@ -7,6 +7,14 @@ async function saveDataBySection(section, data) {
     let saveDataRes;
 
     if (section === SECTIONS.BOOKS) {
+        const books = await apiBooks.getBooks();
+        const existantBook = books.filter((book) => book.titulo === data.titulo);
+
+        if (existantBook.length !== 0) return {
+            failed: true,
+            error: 'Ya existe un libro con el mismo titulo ingresado.'
+        }
+
         saveDataRes = await apiBooks.saveBook(data);  
     } else if (section === SECTIONS.LENDINGS) {
         const { alumnoDni, ...restOfData } = data;
@@ -29,6 +37,14 @@ async function saveDataBySection(section, data) {
         saveDataRes = await apiLendings.saveLending(save);
     }
     else {
+        const students = await apiStudents.getStudents();
+        const existantStudent = students.filter((student) => student.dni === data.dni);
+
+        if (existantStudent.length !== 0) return {
+            failed: true,
+            error: 'Ya existe un usuario con este dni.'
+        }
+
         saveDataRes = await apiStudents.saveStudent(data);
     }
 
