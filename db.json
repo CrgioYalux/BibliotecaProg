@@ -32,18 +32,6 @@
       "dni": "42719383",
       "nombre": "Crgio",
       "direccion": "No se"
-    },
-    {
-      "dni": "12312312",
-      "nombre": "asdasd",
-      "direccion": "asdasd",
-      "id": 2
-    },
-    {
-      "dni": "",
-      "nombre": "",
-      "direccion": "",
-      "id": 3
     }
   ],
   "prestamos": [
@@ -60,13 +48,6 @@
       "libroId": 2,
       "alumnoId": 1,
       "id": 2
-    },
-    {
-      "fechaEntrega": "2023-10-12",
-      "fechaDevolucion": "2022-11-01",
-      "libroId": 3,
-      "alumnoId": 2,
-      "id": 3
     }
   ]
 }
