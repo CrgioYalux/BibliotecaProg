@@ -38,6 +38,12 @@
       "nombre": "asdasd",
       "direccion": "asdasd",
       "id": 2
+    },
+    {
+      "dni": "",
+      "nombre": "",
+      "direccion": "",
+      "id": 3
     }
   ],
   "prestamos": [

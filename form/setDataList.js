@@ -13,6 +13,8 @@ function setBooksDataList(dataListBox, data = []) {
 
         li.dataset.id = element.id;
 
+        input.dataset.element = JSON.stringify(element);
+
         label.setAttribute('for', element.id);
 
         input.setAttribute('id', element.id);
@@ -51,6 +53,8 @@ function setStudentsDataList(dataListBox, data = []) {
         const small = document.createElement('small');
 
         li.dataset.id = element.id;
+
+        input.dataset.element = JSON.stringify(element);
 
         label.setAttribute('for', element.id);
 
@@ -103,6 +107,8 @@ function setLendingsDataList(dataListBox, data = []) {
         li.dataset.id = element.id;
         li.dataset.libroId  = element.libroId;
         li.dataset.alumnoId = element.alumnoId;
+
+        input.dataset.element = JSON.stringify(element);
         
         label.setAttribute('for', element.id);
 
