@@ -33,7 +33,7 @@ function editingMode(isEditing, section) {
 }
 
 mainForm.addEventListener('submit', (event) => {
-    submitForm(event, currentSection, selectedElement);
+    submitForm(event, currentSection, selectedElementId);
 });
 
 sectionsBox.addEventListener('change', (event) => {

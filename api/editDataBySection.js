@@ -6,12 +6,31 @@ async function editDataBySection(section, id, data) {
     let editDataRes;
 
     if (section === 'bookSection') {
-        editDataRes = await apiBooks.editBook(id, data);  
+        editDataRes = await apiBooks.editBook(id, {
+                titulo: data.titulo,
+                autor: data.autor
+            }
+        );  
     } else if (section === 'lendingSection') {
-        editDataRes = await apiLendings.editLending(id, data);
+        const students = await apiStudents.getStudents();
+
+        const existantStudent = students.filter((student) => student.dni === data.alumnoDni);
+
+        if (existantStudent.length === 0) return false;
+
+        editDataRes = await apiLendings.editLending(id, {
+            fechaEntrega: data.fechaEntrega,
+            fechaDevolucion: data.fechaDevolucion,
+            libroId: data.libroId,
+            alumnoId: existantStudent[0].id
+        });
     }
     else {
-        edit = await apiStudents.editStudent(id, data);
+        editDataRes = await apiStudents.editStudent(id, {
+            dni: data.dni,
+            direccion: data.direccion,
+            nombre: data.nombre
+        });
     }
 
     return editDataRes;

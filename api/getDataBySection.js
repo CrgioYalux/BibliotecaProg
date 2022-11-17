@@ -3,18 +3,18 @@ import apiLendings from './lendings/actions.js';
 import apiStudents from './students/actions.js';
 
 async function getDataBySection(section) {
-    let data = [];
+    let getDataRes = [];
 
     if (section === 'bookSection') {
-        data = await apiBooks.getBooks();
+        getDataRes = await apiBooks.getBooks();
     } else if (section === 'lendingSection') {
-        data = await apiLendings.getLendings();
+        getDataRes = await apiLendings.getLendings();
     }
     else {
-        data = await apiStudents.getStudents();
+        getDataRes = await apiStudents.getStudents();
     }
 
-    return data;
+    return getDataRes;
 }
 
 export {

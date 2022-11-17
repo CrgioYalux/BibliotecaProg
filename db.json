@@ -24,28 +24,39 @@
       "titulo": "La vuelta al mundo en 80 días",
       "autor": "Julio Verne",
       "id": 5
+    },
+    {
+      "titulo": "Las aventuras de Alicia en el País de las Maravillas",
+      "autor": "Lewis Carroll",
+      "id": 6
     }
   ],
   "alumnos": [
     {
-      "id": 1,
       "dni": "42719383",
+      "direccion": "Moreno",
       "nombre": "Crgio",
-      "direccion": "No se"
+      "id": 1
+    },
+    {
+      "dni": "52214",
+      "direccion": "11th Street",
+      "nombre": "Karl Marx",
+      "id": 2
     }
   ],
   "prestamos": [
     {
       "fechaEntrega": "2022-11-11",
       "fechaDevolucion": "2022-11-01",
-      "libroId": 1,
+      "libroId": 5,
       "alumnoId": 1,
       "id": 1
     },
     {
-      "fechaEntrega": "2022-11-18",
-      "fechaDevolucion": "2022-11-09",
-      "libroId": 2,
+      "fechaEntrega": "2022-11-09",
+      "fechaDevolucion": "2022-11-01",
+      "libroId": 4,
       "alumnoId": 1,
       "id": 2
     }
